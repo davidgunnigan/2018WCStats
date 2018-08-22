@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/site.css}"/>
+
+    <title th:text = "'WC 2018 Stats | ' + ${team}">WC 2018 Stats</title>
+</head>
+<body>
+<div class="header"><a th:href="@{/}"><img src="WC-2018-Stats.png" alt="WC 2018 Stats"/></a>
+
+
+</div>
+<div id="content">
+    <h1 th:text = "${team} + ' Stats'"></h1>
+    <div>
+    <table border="1">
+        <tbody>
+            <tr>
+                <th>Games Played</th>
+                <th>Wins</th>
+                <th>Draws</th>
+                <th>Losses</th>
+                <th>Goals Scored</th>
+                <th>Goals Conceded</th>
+            </tr>
+            <tr>
+                <td th:text = "${team.gamesPlayed}"></td>
+                <td th:text = "${team.wins}"></td>
+                <td th:text = "${team.draws}"></td>
+                <td th:text = "${team.losses}"></td>
+                <td th:text = "${team.goalsFor}"></td>
+                <td th:text = "${team.goalsAgainst}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   <table border="1">
+       <thead th:text = "${team}+' - Top Scorers'"></thead>
+        <tbody class="scorersTable">
+            <tr th:each = "instance: ${topScorers}">
+                <td th:text="${instance.key}" class="listItem"></td>
+                <td>
+                    <ul class="startingXIdiv">
+                        <li th:each="player : ${instance.value}" th:text="${player}" class="listItem"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+   </table>
+<div>
+    <table border="1">
+        <thead th:text = "${team}+' - Starting XIs'"></thead>
+        <tbody class="scorersTable">
+            <tr th:each = "instance : ${allStartingXIs}">
+                <td th:text="${instance.key}" class="listItem"></td>
+                <td>
+                    <ul class="startingXIdiv">
+                        <li th:each="player : ${instance.value}" th:text="${player}" class="listItem"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+</body>
+</html>

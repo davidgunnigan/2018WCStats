@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body {
+      background: #E1E1E1;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+     }
+     .header {
+     text-align: center;
+     background: #212121;
+     color: #FEFEFE;
+     }
+
+     #content {
+     width: 80%;
+     overflow: hidden;
+     display: block;
+     background: #FEFEFE;
+     text-align:center;
+     margin-right: auto;
+     margin-left: auto;
+     position: static;
+     overflow: hidden;
+     }
+
+     .groupHeader {
+     background: #212121;
+     text-align: center;
+     color: #FEFEFE;
+     align: top;
+     }
+
+     .groupDiv {
+     background: #E1E1E1;
+     display: inline-block;
+     position:relative;
+     margin:2em;
+     width:30%;
+     overflow: hidden;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     }
+
+     #containerDiv {
+     margin-right: auto;
+     margin-left: auto;
+     }
+
+     .groupTeamList {
+     list-style: none;
+     text-align: center;
+     margin-right: 12%;
+     }
+
+     .listItem {
+     margin:.3em;
+     background-color: #FFFFFF;
+     }
+
+     .scorersTable {
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     width:90%;
+     }
+
+     .linkButton {
+     background-color: #212121;
+     color: #FFFFFF;
+     display: block;
+     clear: both;
+     width: 50%;
+     position: static;
+     text-align:center;
+     padding: 30px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     margin-right: auto;
+     margin-left: auto;
+     }
+
+     .topScorersClass {
+     text-transform: capitalize;
+     width: 90%;
+     }
+
+     .startingXIdiv {
+     list-style: none;
+     text-align: left;
+     }
+
+     .tablesDiv {
+     width: 80%;
+
+     }
+

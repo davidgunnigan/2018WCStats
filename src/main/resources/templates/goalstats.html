@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/site.css}"/>
+
+</head>
+<body>
+<div class="header"><a href="/"><img src="WC-2018-Stats.png" alt="WC 2018 Stats"/></a>
+
+
+</div>
+    <div id="content">
+        <div>
+            <div class="tablesDiv">
+                <table border="1">
+                    <thead>List of all Scoring Players</thead>
+                    <tbody class="topScorersClass">
+                        <tr th:each ="instance : ${getTopScorers}">
+                            <td th:text="${instance.key}"></td>
+                            <td th:each="player : ${instance.value}" th:text=${#strings.toLowerCase(player)}>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table border="1">
+                    <thead>Teams by goals scored</thead>
+                    <tbody>
+                        <tr th:each = "instance: ${topScoringTeams}">
+                            <td th:text="${instance.key}"></td>
+                            <td th:each="team : ${instance.value}" th:text="${team}">
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <table border="1">
+                    <thead>Teams by goals conceded</thead>
+                    <tbody>
+                        <tr th:each = "instance: ${topConcedingTeams}">
+                            <td th:text="${instance.key}"></td>
+                            <td th:each="team : ${instance.value}" th:text="${team}">
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

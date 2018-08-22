@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="site.css"/>
+
+    <title>WC 2018 Stats | Home</title>
+</head>
+<body>
+    <div class="header">
+        <img src="WC-2018-Stats.png" alt="WC 2018 Stats"/>
+    </div>
+
+
+    <div id="content">
+            <div th:each="instance : ${perGroupTeams}" class="groupDiv">
+                <h1 th:text ="'Group '+ ${instance.key} " class="groupHeader"> </h1>
+                <ul  class="groupTeamList">
+                    <li th:each="team : ${instance.value}" class="listItem">
+                        <a th:href="@{'/team/'  + ${#strings.toLowerCase(team.fifaCode)}}"
+                                                           th:utext="${team.country} "></a></li>
+                </ul>
+            </div>
+            <div class="linkButton">
+                <a href="/goalstats">View Scoring Statistics!</a>
+            </div>
+    </div>
+
+</body>
+
+    <div th:fragment="scripts">
+        <script th:src="@{/vendor/jquery/jquery-1.11.3.js}"></script>
+        <script th:src="@{/vendor/materialize/js/materialize.js}"></script>
+        <script th:src="@{/vendor/codrops/js/classie.js}"></script>
+        <script th:src="@{/vendor/codrops/js/selectFx.js}"></script>
+    </div>
+
+</body>
+<!--  + ' ' + ${team.flagUnicode} -->
+</html>
