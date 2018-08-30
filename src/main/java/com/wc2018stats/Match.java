@@ -1,5 +1,7 @@
 package com.wc2018stats;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -9,7 +11,6 @@ public class Match {
     private String location;
     private String status;
     private String time;
-    private List<String> officials;
     private String stage_name;
     private MatchTeam home_team;
     private MatchTeam away_team;
@@ -17,6 +18,7 @@ public class Match {
     private String away_team_country;
     private List<TeamEvent> home_team_events;
     private List<TeamEvent> away_team_events;
+    private List<String> officials;
     private Weather weather;
     private TeamMatchStatistics home_team_statistics;
     private TeamMatchStatistics away_team_statistics;
@@ -30,7 +32,6 @@ public class Match {
     public String getLocation() {
         return location;
     }
-
 
     public MatchTeam getHome_team() {
         return home_team;

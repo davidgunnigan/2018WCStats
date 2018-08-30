@@ -2,6 +2,7 @@ package com.wc2018stats.controller;
 
 import com.wc2018stats.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.util.*;
 
 @Controller
+@ComponentScan()
 public class TeamController {
 
     @RequestMapping(value = "/team/{teamCode}", method = RequestMethod.GET)
@@ -39,8 +41,8 @@ public class TeamController {
         String teamGoals = team.getCountry();
         List<String> allGoalsByTeam = scoringStats.scorersFilterByTeam(teamGoals);
         Map<String, Integer> goalsPerPlayer = scoringStats.getScoresPerPlayer(allGoalsByTeam);
-        Map<Integer, List<String>> topScorersMap = scoringStats.calculateTopScorers(goalsPerPlayer);
-        Map<Integer, List<String>> topScorers = new TreeMap<>(topScorersMap);
+        Map<Integer, List<String>> topScorers = new TreeMap<>(Collections.reverseOrder());
+        topScorers.putAll(scoringStats.calculateTopScorers(goalsPerPlayer));
 
         System.out.println(topScorers);
         if (topScorers != null) {
@@ -50,7 +52,7 @@ public class TeamController {
         }
 
         CountryStartingXI countryStartingXI = new CountryStartingXI();
-        Map<String, List<Player>> allStartingXIs = new HashMap<>();
+        Map<String, List<Player>> allStartingXIs = new TreeMap<>();
         Map<Match, List<Player>> allXIsInStages = countryStartingXI.allStartingXIs(teamCode);
         List<Match> matches = new DataRetriever().getAllMatchesList();
         for (Match match : allXIsInStages.keySet()) {

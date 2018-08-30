@@ -12,7 +12,7 @@ body {
      color: #FEFEFE;
      }
 
-     #content {
+     .content {
      width: 80%;
      overflow: hidden;
      display: block;
@@ -41,10 +41,6 @@ body {
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
      }
 
-     #containerDiv {
-     margin-right: auto;
-     margin-left: auto;
-     }
 
      .groupTeamList {
      list-style: none;
@@ -59,7 +55,8 @@ body {
 
      .scorersTable {
      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-     width:90%;
+     text-transform: capitalize;
+     position: relative;
      }
 
      .linkButton {
@@ -90,4 +87,69 @@ body {
      width: 80%;
 
      }
+
+     .tableHead {
+     font-size: 2em;
+     background: #212121;
+     color: #FFFFFF;
+     width:100%;
+     }
+
+     .tableHeadSmall {
+        font-size: 1.3em;
+        background: #212121;
+        color: #FFFFFF;
+        width:100%;
+     }
+     .separatingLine {border: 1px solid #000000;}
+
+     hr {
+         margin: 20px 0;
+     }
+
+     #topGoalScorers {
+        display:block;
+        overflow:hidden;
+        text-transform: capitalize;
+     }
+
+
+     .scoreCategory {
+         display:block;
+         overflow:hidden;
+         float:left;
+         clear:left;
+         width: 100%;
+     }
+
+     .scoreNumber, .scorePlayer {
+        display:block;
+        overflow:hidden;
+        float:left;
+        padding: 2px;
+        margin-left: 15px;
+     }
+
+     .scoreNumber {
+          clear:left;
+          font-size: 1.5em;
+          padding-top: 10px;
+          padding-bottom: 10px;
+
+      }
+
+     .scorePlayer {
+        width: 100px;
+        margin-right: 70px;
+        margin-bottom: 30px;
+      }
+
+     #innerTopScorer {
+        width:90%;
+        padding-top: 10px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        padding-left: 70px;
+     }
+
 

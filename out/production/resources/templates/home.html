@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="header">
-        <img src="WC-2018-Stats.png" alt="WC 2018 Stats"/>
+        <img src="/WC-2018-Stats.png" alt="WC 2018 Stats"/>
     </div>
 
 
-    <div id="content">
+    <div class="content">
             <div th:each="instance : ${perGroupTeams}" class="groupDiv">
                 <h1 th:text ="'Group '+ ${instance.key} " class="groupHeader"> </h1>
                 <ul  class="groupTeamList">

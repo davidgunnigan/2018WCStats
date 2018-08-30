@@ -63,7 +63,7 @@ public class ScoringStats {
         Map<Integer, List<String>> topScorers = new TreeMap(Collections.reverseOrder());
         for (String player : getScoresPerPlayer.keySet()) {
             Integer goalCount = getScoresPerPlayer.get(player);
-            topScorers.computeIfAbsent(goalCount, k -> new ArrayList<>()).add(player);
+            topScorers.computeIfAbsent(goalCount, k -> new ArrayList<>()).add(player.toLowerCase());
         }
 
         return topScorers;

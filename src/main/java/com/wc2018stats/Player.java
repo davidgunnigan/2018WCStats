@@ -36,7 +36,7 @@ public class Player {
     @Override
     public String toString() {
 
-        return shirt_number + "    " +name + '\'' +
+        return shirt_number + " - " + name + " - " +
               //  ", captain=" + captain +
 
                 "   " + position + '\n'

@@ -7,27 +7,31 @@
 
 </head>
 <body>
-<div class="header"><a href="/"><img src="WC-2018-Stats.png" alt="WC 2018 Stats"/></a>
+<div class="header"><a href="/"><img src="/WC-2018-Stats.png" alt="WC 2018 Stats"/></a>
 
 
 </div>
-    <div id="content">
-        <div>
-            <div class="tablesDiv">
-                <table border="1">
-                    <thead>List of all Scoring Players</thead>
-                    <tbody class="topScorersClass">
-                        <tr th:each ="instance : ${getTopScorers}">
-                            <td th:text="${instance.key}"></td>
-                            <td th:each="player : ${instance.value}" th:text=${#strings.toLowerCase(player)}>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="content">
+                <h4 class="tableHead">World Cup 2018 Goals Scorers</h4>
+                <div id="topGoalScorers">
+                    <div th:each ="instance : ${getTopScorers}"  class="scoreCategory">
+                            <span class="scoreNumber" th:text="${instance.key}"></span>
+                                <div id="innerTopScorer">
+                                    <span class="scorePlayer" th:each="player : ${instance.value}"
+                                          th:text="${#strings.toLowerCase(player)}">
+                                    </span>
+                                </div>
+
+                    </div>
+
+                </div>
             <div>
-                <table border="1">
-                    <thead>Teams by goals scored</thead>
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="12" class="tableHead">Teams by goals scored</td>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr th:each = "instance: ${topScoringTeams}">
                             <td th:text="${instance.key}"></td>
@@ -39,10 +43,12 @@
                 </table>
             </div>
             <div>
-                <table border="1">
-                    <thead>Teams by goals conceded</thead>
-                    <tbody>
-                        <tr th:each = "instance: ${topConcedingTeams}">
+                <table>
+                    <thead>
+                    <tr>
+                        <td  colspan="12" class="tableHead">Teams by goals conceded</td>
+                    </tr>
+                        <tr th:each = "instance: ${topConcedingTeams}" class="separatingLine">
                             <td th:text="${instance.key}"></td>
                             <td th:each="team : ${instance.value}" th:text="${team}">
 
@@ -51,7 +57,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
     </div>
 
 </body>
