@@ -1,28 +1,30 @@
 package com.wc2018stats;
 
-import com.google.gson.annotations.SerializedName;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 import java.util.List;
 import java.util.Objects;
 
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Match {
 
     private String venue;
     private String location;
     private String status;
     private String time;
-    private String stage_name;
-    private MatchTeam home_team;
-    private MatchTeam away_team;
-    private String home_team_country;
-    private String away_team_country;
-    private List<TeamEvent> home_team_events;
-    private List<TeamEvent> away_team_events;
+    private String stageName;
+    private MatchTeam homeTeam;
+    private MatchTeam awayTeam;
+    private String homeTeamCountry;
+    private String awayTeamCountry;
+    private List<TeamEvent> homeTeamEvents;
+    private List<TeamEvent> awayTeamEvents;
     private List<String> officials;
     private Weather weather;
-    private TeamMatchStatistics home_team_statistics;
-    private TeamMatchStatistics away_team_statistics;
-    private String fifa_id;
+    private TeamMatchStatistics homeTeamStatistics;
+    private TeamMatchStatistics awayTeamStatistics;
+    private String fifaId;
     private String attendance;
 
     public String getVenue() {
@@ -33,40 +35,40 @@ public class Match {
         return location;
     }
 
-    public MatchTeam getHome_team() {
-        return home_team;
+    public MatchTeam getHomeTeam() {
+        return homeTeam;
     }
 
-    public MatchTeam getAway_team() {
-        return away_team;
+    public MatchTeam getAwayTeam() {
+        return awayTeam;
     }
 
-    public String getHome_team_country() {
-        return home_team_country;
+    public String getHomeTeamCountry() {
+        return homeTeamCountry;
     }
 
-    public String getAway_team_country() {
-        return away_team_country;
+    public String getAwayTeamCountry() {
+        return awayTeamCountry;
     }
 
-    public List<TeamEvent> getHome_team_events() {
-        return home_team_events;
+    public List<TeamEvent> getHomeTeamEvents() {
+        return homeTeamEvents;
     }
 
-    public List<TeamEvent> getAway_team_events() {
-        return away_team_events;
+    public List<TeamEvent> getAwayTeamEvents() {
+        return awayTeamEvents;
     }
 
-    public TeamMatchStatistics getHome_team_statistics() {
-        return home_team_statistics;
+    public TeamMatchStatistics getHomeTeamStatistics() {
+        return homeTeamStatistics;
     }
 
-    public TeamMatchStatistics getAway_team_statistics() {
-        return away_team_statistics;
+    public TeamMatchStatistics getAwayTeamStatistics() {
+        return awayTeamStatistics;
     }
 
-    public String getFifa_id() {
-        return fifa_id;
+    public String getFifaId() {
+        return fifaId;
     }
 
     public String getAttendance() {
@@ -85,8 +87,8 @@ public class Match {
         return officials;
     }
 
-    public String getStage_name() {
-        return stage_name;
+    public String getStageName() {
+        return stageName;
     }
 
     public Weather getWeather() {
@@ -96,26 +98,26 @@ public class Match {
     @Override
     public String toString() {
         return "Match{" +
-                "fifa_id=" + fifa_id +
+                "fifaId=" + fifaId +
                 ", attendance=" + attendance +
                 ", venue='" + venue + '\'' +
                 ", location='" + location + '\'' +
                 ", status='" + status + '\'' +
                 ", time='" + time + '\'' +
                 ", officials=" + officials +
-                ", stage_name='" + stage_name + '\'' +
-                ", home_team='" + home_team + '\'' +
-                ", away_team='" + away_team + '\'' +
-                ", home_team_events=" + home_team_events +
-                ", away_team_events=" + away_team_events +
+                ", stageName='" + stageName + '\'' +
+                ", homeTeam='" + homeTeam + '\'' +
+                ", awayTeam='" + awayTeam + '\'' +
+                ", homeTeamEvents=" + homeTeamEvents +
+                ", awayTeamEvents=" + awayTeamEvents +
                 ", weather=" + weather +
-                ", home_team_statistics=" + home_team_statistics +
-                ", away_team_statistics=" + away_team_statistics +
+                ", homeTeamStatistics=" + homeTeamStatistics +
+                ", awayTeamStatistics=" + awayTeamStatistics +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fifa_id);
+        return Objects.hash(fifaId);
     }
 }

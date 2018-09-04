@@ -1,8 +1,13 @@
 package com.wc2018stats;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+
 public class TeamEvent {
     public int id;
-    public String type_of_event;
+    public String typeOfEvent;
     public String player;
     public String time;
 
@@ -11,8 +16,8 @@ public class TeamEvent {
         return id;
     }
 
-    public String getType_of_event() {
-        return type_of_event;
+    public String getTypeOfEvent() {
+        return typeOfEvent;
     }
 
     public String getPlayer() {

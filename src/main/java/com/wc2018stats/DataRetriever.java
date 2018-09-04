@@ -76,7 +76,9 @@ public class DataRetriever {
     }
 
     public List<Match> parseMatches (String matchesJson) {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .create();
         return gson.fromJson(matchesJson, new TypeToken<List<Match>>(){}.getType());
     }
 

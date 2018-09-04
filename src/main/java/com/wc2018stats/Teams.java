@@ -12,11 +12,11 @@ public class Teams {
         List<Match> matches = dataRetriever.parseMatches(matchesJson);
         Set<MatchTeam> allTeamsInWorldCup = new HashSet<>();
         for (Match match : matches) {
-            MatchTeam homeTeam = match.getHome_team();
+            MatchTeam homeTeam = match.getHomeTeam();
             homeTeam.setFlagUnicode(teamFlagProvider.getFlagForTeam(homeTeam.getCode()));
             allTeamsInWorldCup.add(homeTeam);
 
-            MatchTeam awayTeam = match.getAway_team();
+            MatchTeam awayTeam = match.getAwayTeam();
             awayTeam.setFlagUnicode(teamFlagProvider.getFlagForTeam(awayTeam.getCode()));
             allTeamsInWorldCup.add(awayTeam);
 

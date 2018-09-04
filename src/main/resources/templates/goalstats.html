@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <meta charset="UTF-8"/>
 
@@ -7,56 +8,53 @@
 
 </head>
 <body>
-<div class="header"><a href="/"><img src="/WC-2018-Stats.png" alt="WC 2018 Stats"/></a>
+<div class="header"><a href="/"><img src="/WC-2018-Stats.png" alt="WC 2018 Stats" class="image"/></a>
 
 
 </div>
     <div class="content">
                 <h4 class="tableHead">World Cup 2018 Goals Scorers</h4>
-                <div id="topGoalScorers">
+                <div class="topGoalScorers">
                     <div th:each ="instance : ${getTopScorers}"  class="scoreCategory">
+                        <br>
+                        <hr>
                             <span class="scoreNumber" th:text="${instance.key}"></span>
-                                <div id="innerTopScorer">
+                                <div class="innerTopScorer">
                                     <span class="scorePlayer" th:each="player : ${instance.value}"
                                           th:text="${#strings.toLowerCase(player)}">
                                     </span>
-                                </div>
 
+                                </div>
                     </div>
 
                 </div>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <td colspan="12" class="tableHead">Teams by goals scored</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each = "instance: ${topScoringTeams}">
-                            <td th:text="${instance.key}"></td>
-                            <td th:each="team : ${instance.value}" th:text="${team}">
+                 <h4 class="tableHead">Teams by goals scored</h4>
+                <div class="topGoalScorers">
+                    <div th:each ="instance: ${topScoringTeams}"  class="scoreCategory">
+                        <br>
+                        <hr>
+                        <span class="scoreNumber" th:text="${instance.key}"></span>
+                        <div class="innerTopScorer">
+                                    <span class="scorePlayer" th:each="team : ${instance.value}"
+                                          th:text="${team}">
+                                    </span>
+                        </div>
+                    </div>
+                </div>
+                <h4 class="tableHead">Teams by goals conceded</h4>
+                <div class="topGoalScorers">
+                    <div th:each ="instance: ${topConcedingTeams}"  class="scoreCategory">
+                        <br>
+                        <hr>
+                        <span class="scoreNumber" th:text="${instance.key}"></span>
+                        <div class="innerTopScorer">
+                                            <span class="scorePlayer" th:each="team : ${instance.value}"
+                                                  th:text="${team}">
+                                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div>
-                <table>
-                    <thead>
-                    <tr>
-                        <td  colspan="12" class="tableHead">Teams by goals conceded</td>
-                    </tr>
-                        <tr th:each = "instance: ${topConcedingTeams}" class="separatingLine">
-                            <td th:text="${instance.key}"></td>
-                            <td th:each="team : ${instance.value}" th:text="${team}">
-
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
     </div>
 
 </body>

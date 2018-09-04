@@ -1,11 +1,15 @@
 package com.wc2018stats;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.util.Objects;
 
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Player {
     private String name;
     private boolean captain;
-    private String shirt_number;
+    private String shirtNumber;
     private String position;
 
     public boolean isCaptain() {
@@ -20,8 +24,8 @@ public class Player {
         }
     }
 
-    public String getShirt_number() {
-        return shirt_number;
+    public String getShirtNumber() {
+        return shirtNumber;
     }
 
     public String getPosition() {
@@ -30,13 +34,13 @@ public class Player {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position, shirt_number);
+        return Objects.hash(name, position, shirtNumber);
     }
 
     @Override
     public String toString() {
 
-        return shirt_number + " - " + name + " - " +
+        return shirtNumber + " - " + name + " - " +
               //  ", captain=" + captain +
 
                 "   " + position + '\n'

@@ -12,11 +12,11 @@ public class CountryStartingXI {
         Map<Match, List<Player>> allStartingXIsMap = new HashMap<>();
         List<Match> matches = new DataRetriever().getAllMatchesList();
         for (Match match : matches) {
-            if (teamFifaCode.equalsIgnoreCase(match.getHome_team().getCode())){
-                allStartingXIsMap.put(match, match.getHome_team_statistics().getStarting_eleven());
+            if (teamFifaCode.equalsIgnoreCase(match.getHomeTeam().getCode())){
+                allStartingXIsMap.put(match, match.getHomeTeamStatistics().getStartingEleven());
 
-            } else if (teamFifaCode.equalsIgnoreCase(match.getAway_team().getCode())) {
-                allStartingXIsMap.put(match, match.getAway_team_statistics().getStarting_eleven());
+            } else if (teamFifaCode.equalsIgnoreCase(match.getAwayTeam().getCode())) {
+                allStartingXIsMap.put(match, match.getAwayTeamStatistics().getStartingEleven());
             }
         }
         return allStartingXIsMap;
@@ -29,7 +29,7 @@ public class CountryStartingXI {
        // System.out.println(allXIsInStages);
         for (Match match : allXIsInStages.keySet()) {
             List<Player> startingXI = allXIsInStages.get(match);
-            System.out.println(match.getStage_name() + " - " + match.getHome_team() + " v " + match.getAway_team());
+            System.out.println(match.getStageName() + " - " + match.getHomeTeam() + " v " + match.getAwayTeam());
             System.out.println(startingXI);
             System.out.println("--------------------------------------");
         }

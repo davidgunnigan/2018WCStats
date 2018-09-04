@@ -1,15 +1,12 @@
 package com.wc2018stats.controller;
 
 import com.wc2018stats.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
 import java.util.*;
@@ -53,11 +50,11 @@ public class TeamController {
 
         CountryStartingXI countryStartingXI = new CountryStartingXI();
         Map<String, List<Player>> allStartingXIs = new TreeMap<>();
-        Map<Match, List<Player>> allXIsInStages = countryStartingXI.allStartingXIs(teamCode);
+         Map<Match, List<Player>> allXIsInStages = countryStartingXI.allStartingXIs(teamCode);
         List<Match> matches = new DataRetriever().getAllMatchesList();
         for (Match match : allXIsInStages.keySet()) {
             List<Player> startingXI = allXIsInStages.get(match);
-            String fixture = (match.getStage_name() + " - " + match.getHome_team_country() + " v " + match.getAway_team_country());
+            String fixture = (match.getStageName() + " - " + match.getHomeTeamCountry() + " v " + match.getAwayTeamCountry());
             allStartingXIs.put(fixture, startingXI);
         }
 

@@ -14,10 +14,10 @@ public class ScoringStats {
 
         List<Match> matches = new DataRetriever().getAllMatchesList();
         for (Match match : matches) {
-            List<TeamEvent> homeTeamEvents = match.getHome_team_events();
+            List<TeamEvent> homeTeamEvents = match.getHomeTeamEvents();
             scorers.addAll(getScorers(homeTeamEvents));
 
-            List<TeamEvent> awayTeamEvents = match.getAway_team_events();
+            List<TeamEvent> awayTeamEvents = match.getAwayTeamEvents();
             scorers.addAll(getScorers(awayTeamEvents));
         }
         return scorers;
@@ -28,12 +28,12 @@ public class ScoringStats {
 
         List<Match> matches = new DataRetriever().getAllMatchesList();
         for (Match match : matches) {
-            List<TeamEvent> homeTeamEvents = match.getHome_team_events();
-            if (team.equalsIgnoreCase(match.getHome_team_country())) {
+            List<TeamEvent> homeTeamEvents = match.getHomeTeamEvents();
+            if (team.equalsIgnoreCase(match.getHomeTeamCountry())) {
                 allScorersByCountry.addAll(getScorers(homeTeamEvents));
             }
-            List<TeamEvent> awayTeamEvents = match.getAway_team_events();
-            if (team.equalsIgnoreCase(match.getAway_team_country())) {
+            List<TeamEvent> awayTeamEvents = match.getAwayTeamEvents();
+            if (team.equalsIgnoreCase(match.getAwayTeamCountry())) {
                 allScorersByCountry.addAll(getScorers(awayTeamEvents));
             }
         }
@@ -82,8 +82,8 @@ public class ScoringStats {
     public List<String> getScorers(List<TeamEvent> events) {
         List<String> allGoals = new ArrayList<>();
         for (TeamEvent teamEvent : events) {
-            if(GOAL_EVENT.equalsIgnoreCase(teamEvent.getType_of_event()) ||
-                    PENALTY_GOAL_EVENT.equalsIgnoreCase(teamEvent.getType_of_event())) {
+            if(GOAL_EVENT.equalsIgnoreCase(teamEvent.getTypeOfEvent()) ||
+                    PENALTY_GOAL_EVENT.equalsIgnoreCase(teamEvent.getTypeOfEvent())) {
                 allGoals.add(teamEvent.getPlayer().toUpperCase());
             }
         }

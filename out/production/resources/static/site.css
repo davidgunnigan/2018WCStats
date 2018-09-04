@@ -107,7 +107,7 @@ body {
          margin: 20px 0;
      }
 
-     #topGoalScorers {
+     .topGoalScorers {
         display:block;
         overflow:hidden;
         text-transform: capitalize;
@@ -144,12 +144,17 @@ body {
         margin-bottom: 30px;
       }
 
-     #innerTopScorer {
+     .innerTopScorer {
         width:90%;
         padding-top: 10px;
         padding-right: 0px;
         padding-bottom: 10px;
         padding-left: 70px;
+     }
+
+     .image {
+        max-width:100%;
+        height:auto;
      }
 
 

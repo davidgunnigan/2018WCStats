@@ -23,7 +23,7 @@ public class PartitionToList1  {
 //    public static List<Team> teamList (List<Match> matches) {
 //        List<Team> awayTeamList = new ArrayList<>();
 //        for (Match match : matches) {
-//           Team away = match.getAway_team();
+//           Team away = match.getAwayTeam();
 //           awayTeamList.add(away);
 //        }
 //        return awayTeamList;

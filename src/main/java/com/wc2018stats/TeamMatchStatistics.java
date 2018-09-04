@@ -1,58 +1,62 @@
 package com.wc2018stats;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.util.List;
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 
 public class TeamMatchStatistics {
 
     private Object country;
-    private int attempts_on_goal, on_target, off_target, blocked, woodwork, corners, offsides, ball_possession;
-    private int pass_accuaracy, num_passes, passes_completed, distance_covered, balls_recovered, tackles, clearances;
-    private int yellow_cards, red_cards, fouls_commited;
+    private int attemptsOnGoal, onTarget, offTarget, blocked, woodwork, corners, offsides, ballPossession;
+    private int passAccuaracy, numPasses, passesCompleted, distanceCovered, ballsRecovered, tackles, clearances;
+    private int yellowCards, red_cards, foulsCommited;
     private Object tactics;
-    private List<Player> starting_eleven;
+    private List<Player> startingEleven;
 
-    public TeamMatchStatistics(String country, int attempts_on_goal, int on_target, int off_target, int blocked,
-                               int woodwork, int corners, int offsides, int ball_possession, int pass_accuaracy,
-                               int num_passes, int passes_completed, int distance_covered, int balls_recovered,
-                               int tackles, int clearances, int yellow_cards, int red_cards, int fouls_commited,
-                               Object tactics, List<Player> starting_eleven) {
+    public TeamMatchStatistics(String country, int attemptsOnGoal, int onTarget, int offTarget, int blocked,
+                               int woodwork, int corners, int offsides, int ballPossession, int passAccuaracy,
+                               int numPasses, int passesCompleted, int distanceCovered, int ballsRecovered,
+                               int tackles, int clearances, int yellowCards, int red_cards, int foulsCommited,
+                               Object tactics, List<Player> startingEleven) {
         this.country = country;
-        this.attempts_on_goal = attempts_on_goal;
-        this.on_target = on_target;
-        this.off_target = off_target;
+        this.attemptsOnGoal = attemptsOnGoal;
+        this.onTarget = onTarget;
+        this.offTarget = offTarget;
         this.blocked = blocked;
         this.woodwork = woodwork;
         this.corners = corners;
         this.offsides = offsides;
-        this.ball_possession = ball_possession;
-        this.pass_accuaracy = pass_accuaracy;
-        this.num_passes = num_passes;
-        this.passes_completed = passes_completed;
-        this.distance_covered = distance_covered;
-        this.balls_recovered = balls_recovered;
+        this.ballPossession = ballPossession;
+        this.passAccuaracy = passAccuaracy;
+        this.numPasses = numPasses;
+        this.passesCompleted = passesCompleted;
+        this.distanceCovered = distanceCovered;
+        this.ballsRecovered = ballsRecovered;
         this.tackles = tackles;
         this.clearances = clearances;
-        this.yellow_cards = yellow_cards;
+        this.yellowCards = yellowCards;
         this.red_cards = red_cards;
-        this.fouls_commited = fouls_commited;
+        this.foulsCommited = foulsCommited;
         this.tactics = tactics;
-        this.starting_eleven = starting_eleven;
+        this.startingEleven = startingEleven;
     }
 
     public Object getCountry() {
         return country;
     }
 
-    public int getAttempts_on_goal() {
-        return attempts_on_goal;
+    public int getAttemptsOnGoal() {
+        return attemptsOnGoal;
     }
 
-    public int getOn_target() {
-        return on_target;
+    public int getOnTarget() {
+        return onTarget;
     }
 
-    public int getOff_target() {
-        return off_target;
+    public int getOffTarget() {
+        return offTarget;
     }
 
     public int getBlocked() {
@@ -71,28 +75,28 @@ public class TeamMatchStatistics {
         return offsides;
     }
 
-    public int getBall_possession() {
-        return ball_possession;
+    public int getBallPossession() {
+        return ballPossession;
     }
 
-    public int getPass_accuaracy() {
-        return pass_accuaracy;
+    public int getPassAccuaracy() {
+        return passAccuaracy;
     }
 
-    public int getNum_passes() {
-        return num_passes;
+    public int getNumPasses() {
+        return numPasses;
     }
 
-    public int getPasses_completed() {
-        return passes_completed;
+    public int getPassesCompleted() {
+        return passesCompleted;
     }
 
-    public int getDistance_covered() {
-        return distance_covered;
+    public int getDistanceCovered() {
+        return distanceCovered;
     }
 
-    public int getBalls_recovered() {
-        return balls_recovered;
+    public int getBallsRecovered() {
+        return ballsRecovered;
     }
 
     public int getTackles() {
@@ -103,23 +107,23 @@ public class TeamMatchStatistics {
         return clearances;
     }
 
-    public int getYellow_cards() {
-        return yellow_cards;
+    public int getYellowCards() {
+        return yellowCards;
     }
 
     public int getRed_cards() {
         return red_cards;
     }
 
-    public int getFouls_commited() {
-        return fouls_commited;
+    public int getFoulsCommited() {
+        return foulsCommited;
     }
 
     public Object getTactics() {
         return tactics;
     }
 
-    public List<Player> getStarting_eleven() {
-        return starting_eleven;
+    public List<Player> getStartingEleven() {
+        return startingEleven;
     }
 }
