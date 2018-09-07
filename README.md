@@ -33,5 +33,24 @@ The ScoringStatsController uses ScoringStats for over all top scorers, and TeamS
 
 ## Templates
 
-The home.html template uses a div with the Thymeleaf each function, to loop through the perGroupTeams Map in HomeController, to give each groupd their own div with the 4 teams competing in that group.
+The home.html template uses a div with the Thymeleaf each function, to loop through the perGroupTeams Map in HomeController, to give each groupd their own div with the 4 teams competing in that group, linking to each individual team. See below;
+
+![home page](https://user-images.githubusercontent.com/22411203/45217757-28dd4700-b29d-11e8-941e-1074e7d0551d.PNG)
+
+This page also links to the Scoring Stats page.
+
+The team.html template uses the Thymeleaf text function for the header, and displays a table for the teams overall statistics;
+
+![uruguay stats](https://user-images.githubusercontent.com/22411203/45217760-28dd4700-b29d-11e8-95ad-bc987e2d683e.PNG)
+
+A table is also used for displaying the teams Starting 11s;
+
+![argentina starting xis](https://user-images.githubusercontent.com/22411203/45217756-2844b080-b29d-11e8-90c2-3d39d685885a.PNG)
+
+The scoringsstats.html template uses divs that contain a span for the Map key (Integer for goals scored/conceded) and a span for the value (player/team)
+
+![top goals scorers](https://user-images.githubusercontent.com/22411203/45217759-28dd4700-b29d-11e8-890c-d0d3883b8f04.PNG)
+
+
+![team goals scored](https://user-images.githubusercontent.com/22411203/45217758-28dd4700-b29d-11e8-9e11-38e31f0d265d.PNG)
 
