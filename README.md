@@ -1,5 +1,5 @@
 # 2018WCStats
-2018WCStats is a web application that parses JSON data relating to the 2018 Fifa World Cup, partitions the data using various data structure, and then implements the Spring Framework with Thymeleaf to display the data in HTML pages.
+2018WCStats is a web application that parses JSON data relating to the 2018 Fifa World Cup, partitions the data using various data structure, and then implements Spring Framework with Thymeleaf to display the data in HTML pages.
 
 ## DataRetriever and POJOs
 In the DataRetriever class, a GSON object is created to parse the data from [https://worldcup.sfg.io/](https://worldcup.sfg.io/), returning List<Object> relating to all of the matches and teams involved in the 2018 World Cup.
